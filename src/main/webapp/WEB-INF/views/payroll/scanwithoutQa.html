@@ -1,0 +1,50 @@
+<body>
+<fieldset  data-ng-repeat="choice in choices">
+      <select>
+         <option>Mobile</option>
+         <option>Office</option>
+         <option>Home</option>
+      </select>
+      <input type="text" ng-model="choice.name" name="" placeholder="Enter mobile number">{{choice.id}}
+      <button class="remove" ng-show="$last" ng-click="removeChoice()">-</button>
+   </fieldset>
+   <button class="addfields" ng-click="addNewChoice()">Add fields</button>
+       
+   <div id="choicesDisplay">
+      {{ choices }}
+   </div>
+	<form name="frm">  
+    	<table>  
+                <tr>  
+                    <td>Annual Salary   :  
+  
+                    </td>  
+                    <td>  
+                        <select name="annualSalary" ng-model="annualSalary" ng-change="salaryTypeChnaged(annualSalary)">
+                        <option value="less">less Than 100k</option>
+                        <option value="high">Grater Than 100k</option>
+                        </select><br />  
+                    </td>  
+                </tr>  
+                <tr>  
+                    <td>Amount   :  
+  
+                    </td>  
+                    <td>  
+                        <input type="text" name="amount" ng-model="amount" min="2" max="10" required>  
+                    </td>  
+                </tr>  
+                <tr ng-hide="salaryRange == 'less'">  
+					<td>Lether value   :  
+  
+                    </td>  
+                    <td>  
+                        <input type="text" name="Lethervalue" ng-model="Lethervalue">  
+                    </td>  
+                </tr>
+            </table>  
+        </form>
+  
+        </body>
+        
+        

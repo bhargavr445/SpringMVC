@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container">
+<!-- <button type="submit" class = "btn btn-primary btn-sm" ng-click="goToScan()">Back</button> -->
+<!-- <button type="submit" class = "btn btn-primary btn-sm"ng-click="addNewStudent(student)">submit</button> -->
+<!-- <h1>Add Barcode</h1> -->
+<!-- <input type="text" ng-model="student.name" placeholder="Enter Name"> -->
+<!-- <input type="text" ng-model="student.department" placeholder="Enter Dept"> -->
+<!-- <input type="text" ng-model="student.jobTitle" placeholder="Enter Job Totle"> -->
+<!-- <input type="text" ng-model="student.annualSalary" placeholder="Enter Sal"> -->
+<!-- <input type="text" ng-model="student.estimatedAnnualSalary" placeholder="Enter Est Sal"> -->
+
+<div>
+<div class="row">
+  <div class="col-sm-6">
+  	<div class="form-group">
+ 
+    <label for="formGroupExampleInput">Name :</label>
+   
+    
+    <input type="text" class="form-control" ng-model="addStudent.name" placeholder="Min=3, Max=9">
+  
+  </div>
+  </div>
+  <div class="col-sm-6">
+  	<div class="form-group">
+    <label for="formGroupExampleInput">Department :</label>
+    <input type="text" class="form-control" ng-model="addStudent.department" placeholder="Enter Department">
+  	</div>
+  </div>
+  <div class="col-sm-6">
+  	<div class="form-group">
+    <label for="jobTitle">Job Title :</label>
+    <input type="text" class="form-control" ng-model="addStudent.jobTitle" placeholder="Enter Job Title">
+  </div>
+  </div>
+   <div class="col-sm-6">
+  	<div class="form-group">
+    <label for="annualSalary">Annual Salary :</label>
+    <input type="text" class="form-control" ng-model="addStudent.annualSalary" placeholder="Enter Annual Salary">
+  </div>
+  </div>
+   <div class="col-sm-6">
+  	<div class="form-group">
+    <label for="estimatedAnnualSalary">Estimated Annual Salary :</label>
+    <input type="text" class="form-control" ng-model="addStudent.estimatedAnnualSalary" placeholder="Enter Estimated Annual Salary">
+  </div>
+  </div>
+  
+</div>
+</div>
+<div class="col-sm-6">
+  	<div class="form-group">
+  	<label for="estimatedAnnualSalary"></label>
+    	<button type="submit" class = "btn btn-primary btn-sm" ng-click="goToScan()">Back</button>
+		<button type="submit" class = "btn btn-primary btn-sm"ng-click="addNewStudent()">submit</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

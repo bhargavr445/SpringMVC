@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html data-layout-decorator="fragments/scorpios-layout">
+<head>
+	<title data-layout-title-pattern="$DECORATOR_TITLE - $CONTENT_TITLE">Bacode Search</title>
+	 
+	 
+	 
+	 <script type="text/javascript">
+       $(document).ready(function() {
+    	   $(".barcodeTravelsearch_retrive").click(function(){
+               $("#barcode_view_tab").click();
+               });
+           $(".barcodeVoucher_retrive").click(function(){
+               $("#barcode_view_tab").click();
+               });
+           var path=window.location.pathname;
+       		var path_name = path.split("/");
+       		if(path_name[2] == "barcode"){
+           		$("#search_travel_tab").click(); 
+           	}
+       	
+		});
+    		</script>
+</head>
+<body>
+<!-- Start content -->
+<div class="content" data-layout-fragment="content">
+<!-- Start Container -->
+	<div class="container">
+		<!-- bread crumb Row: Across entire content area -->
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="page-title-box">
+	            	<h4 class="page-title">Barcode Search</h4>
+		        	<ol class="breadcrumb p-0">
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Document</a></li>
+						<li class="active">Barcode</li>
+				  	</ol>
+                    <div class="clearfix"></div>
+		    	</div>
+	     	</div>
+    	</div>				
+			
+						<!--Barcode Search Tab Content --> 
+						<div class="card-box">
+							<ul class="nav nav-tabs m-b-10" id="searchInnerTab" role="tablist">
+								<li class="nav-item active"><a class="nav-link" id="search_travel_tab"
+									data-toggle="tab" href="#searchTravelTab" role="tab"
+									aria-controls="profile">Travel</a></li>
+								<li class="nav-item"><a class="nav-link" id="search_voucher_tab"
+									data-toggle="tab" href="#searchVoucherTab" role="tab"
+									aria-controls="profile">Voucher</a></li>
+							</ul>
+							<div class="tab-content" id="myTabContent">
+							    <!-- Search Travel tab content -->
+								<div class="tab-pane fade" id="searchTravelTab" role="tabpanel" aria-labelledby="search_travel_tab">
+	                        		<div class="tab-content" id="searchTravelTabContent">
+	                        			<form class="" action="#">						
+											<div class="row">
+					                        	<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
+				                        			<div class="row">
+				           		             			<div class="col-lg-12 col-sm-12 col-xs-12 col-md-12">
+															<div class="row form-group">
+																<div class="col-lg-6 col-sm-6 col-xs-12 col-md-6">
+																    <div class="row form-group">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																             <label class="pull-right" for="barcodeSearchTravelBarcode">Barcode:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																			<input type="text" class="barcodeSearchForm form-control  select3" id="barcodeSearchTravelBarcode"  style="width:250px;"/>
+																		</div>
+																    </div>	
+																</div>
+																<div class="col-lg-5 col-sm-5 col-xs-12 col-md-5">
+																    <div class="row form-group">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																            <label class="pull-right" for="barcodeSearchTravelActionCode">EIN/Vendor:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-2 col-lg-2 col-md-2">
+																             <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="barcodeSearchTravelActionCode">
+																                <option selected="selected">Select</option>
+																                 <option>123-12-1234</option>
+																                <option>321-31-4321</option>
+																                <option>999-99-9999</option>
+																                <option>333-33-3333</option>
+																                <option>111-11-1111</option>
+																            </select>
+																        </div>
+																        <div class="col-xs-12 col-sm-5 col-lg-5 col-md-5">
+																             <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="barcodeSearchTravelActionCode1" style="width:150px;">
+																                <option selected="selected">Select</option>
+																                <option>123-12-1234</option>
+																                <option>321-31-4321</option>
+																                <option>999-99-9999</option>
+																                <option>333-33-3333</option>
+																                <option>111-11-1111</option>
+																            </select>
+																        </div>
+																    </div>
+																</div>
+														        <div class="col-xs-12 col-sm-6 col-lg-6 col-md-6">
+																    <div class="form-group row">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																             <label class="pull-right" for="barcodeSearchTravelTravelAuth">Travel Auth #:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																             <input type="text" class="barcodeSearchForm form-control  select3" id="barcodeSearchTravelTravelAuth"  style="width:250px;"/>
+																         </div>
+																    </div>
+																</div>
+																<div class="col-xs-12 col-sm-5 col-lg-5 col-md-5">
+															    	<div class="form-group row">
+															        	<div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+														            		<label class="pull-right" for="barcodeSearchTravelTravelOrder">Travel Order #:</label>
+															        	</div>
+															        	<div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+															            	<input type="text" class="barcodeSearchForm form-control  select3" id="barcodeSearchTravelTravelOrder"  style="width:250px;"/>
+															        	</div>
+															    	</div>
+																</div>
+																<div class="col-xs-12 col-sm-6 col-lg-6 col-md-6">
+																    <div class="form-group row">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																             <label class="pull-right" for="searchTravelSchedule">Schedule #:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-33">
+																             <input type="text" class="barcodeSearchForm form-control  select3" id="searchTravelSchedule"  style="width:250px;"/>
+																        </div>
+																    </div>
+																</div>
+																<div class="col-xs-12 col-sm-5 col-lg-5 col-md-5">
+															    	<div class="form-group row">
+															        	<div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+														            		<label class="pull-right" for="barcodeSearchTravelScheduleDate">Schedule Date:</label>
+															        	</div>
+															        		<div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																            	<div class="input-group date" data-provide="datepicker">
+																					<input type="text" id="barcodeSearchTravelFromDate" class="barcodeSearchForm form-control datePicker"  style="width:100px;" name="date"/><span class="input-group-addon open-datetimepicker">
+																			        	<i class="fa fa-calendar"></i>
+																			        </span>
+																				</div>
+																        	</div>
+																        	<div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																           		<div class="input-group">
+																					<input type="text" id="barcodeSearchTravelToDate" class="barcodeSearchForm form-control datePicker"  style="width:100px;" name="date"/>
+  																			        <span class="input-group-addon open-datetimepicker">
+																			        	<i class="fa fa-calendar"></i>
+																			        </span>
+																				</div>
+																        	</div>
+																        </div>
+																	</div>
+																	<div class="col-xs-12 col-md-12 col-lg-12 col-sm-12" style="background-color:black;height:0px;margin-bottom: 16px;">
+																	</div>
+																	<div class="col-lg-6 col-sm-6 col-xs-12 col-md-6">
+																    <div class="row form-group">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																            <label class="pull-right" for="barcodeSearchTravelSiteId">Site ID:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-2 col-lg-2 col-md-2">
+																             <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="barcodeSearchTravelSiteId">
+																                <option selected="selected">Select</option>
+																                <option>1234</option>
+																                <option>3211</option>
+																                <option>9993</option>
+																                <option>3334</option>
+																                <option>1111</option>
+																            </select>
+																        </div>
+																        <div class="col-xs-12 col-sm-5 col-lg-5 col-md-5">
+																             <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="barcodeSearchTravelSiteId1" style="width:200px;">
+																                <option selected="selected">Select</option>
+																                <option>123-12-1234</option>
+																                <option>321-31-4321</option>
+																                <option>999-99-9999</option>
+																                <option>333-33-3333</option>
+																                <option>111-11-1111</option>
+																            </select>
+																        </div>
+																    </div>
+																</div>
+																<div class="col-xs-12 col-sm-5 col-lg-5 col-md-5">
+																    <div class="row form-group">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																            <label class="pull-right" for="barcodeSearchTravelActionCode">*Action Code:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-2 col-lg-2 col-md-2">
+																             <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="barcodeSearchTravelActionCode">
+																                <option selected="selected">Select</option>
+																                <option>1234</option>
+																                <option>3211</option>
+																                <option>9993</option>
+																                <option>3334</option>
+																                <option>1111</option>
+																            </select>
+																        </div>
+																        <div class="col-xs-12 col-sm-5 col-lg-5 col-md-5">
+																             <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="barcodeSearchTravelActionCode1" style="width:200px;">
+																                <option selected="selected">Select</option>
+																                <option>123-12-1234</option>
+																                <option>321-31-4321</option>
+																                <option>999-99-9999</option>
+																                <option>333-33-3333</option>
+																                <option>111-11-1111</option>
+																            </select>
+																        </div>
+																    </div>
+																</div>
+																<div class="col-lg-6 col-sm-6 col-xs-12 col-md-6">
+																    <div class="row form-group">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																            <label class="pull-right" for="barcodeSearchTravelOperableUnit">*Operable Unit:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-2 col-lg-2 col-md-2">
+																             <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="barcodeSearchTravelOperableUnit">
+																                <option selected="selected">Select</option>
+																                <option>1234</option>
+																                <option>3211</option>
+																                <option>9993</option>
+																                <option>3334</option>
+																                <option>1111</option>
+																            </select>
+																        </div>
+																        <div class="col-xs-12 col-sm-5 col-lg-5 col-md-5">
+																             <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="barcodeSearchTravelOperableUnit1" style="width:200px;">
+																                <option selected="selected">Select</option>
+																                <option>123-12-1234</option>
+																                <option>321-31-4321</option>
+																                <option>999-99-9999</option>
+																                <option>333-33-3333</option>
+																                <option>111-11-1111</option>
+																            </select>
+																        </div>
+																    </div>
+																</div>
+																<div class="col-xs-12 col-sm-5 col-lg-5 col-md-5">
+																    <div class="row form-group">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																            <label class="pull-right" for="barcodeSearchTravelFund">**Fund:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-2 col-lg-2 col-md-2">
+																             <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="barcodeSearchTravelFund">
+																                <option selected="selected">Select</option>
+																                <option>1234</option>
+																                <option>3211</option>
+																                <option>9993</option>
+																                <option>3334</option>
+																                <option>1111</option>
+																            </select>
+																        </div>
+																        <div class="col-xs-12 col-sm-5 col-lg-5 col-md-5">
+																             <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="searchTravelFund1" style="width:200px;">
+																                <option selected="selected">Select</option>
+																                <option>123-12-1234</option>
+																                <option>321-31-4321</option>
+																                <option>999-99-9999</option>
+																                <option>333-33-3333</option>
+																                <option>111-11-1111</option>
+																            </select>
+																        </div>
+																    </div>
+																</div>
+																<div class="col-lg-6 col-sm-6 col-xs-12 col-md-6">
+																    <div class="row form-group">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																            <label class="pull-right" for="searchTravelOrgCode">**Org Code:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-2 col-lg-2 col-md-2">
+																             <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="searchTravelOrgCode">
+																                <option selected="selected">Select</option>
+																                <option>1234</option>
+																                <option>3211</option>
+																                <option>9993</option>
+																                <option>3334</option>
+																                <option>1111</option>
+																            </select>
+																        </div>
+																        <div class="col-xs-12 col-sm-5 col-lg-5 col-md-5">
+																             <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="searchTravelOrgcode1" style="width:200px;">
+																                <option selected="selected">Select</option>
+																                <option>123-12-1234</option>
+																                <option>321-31-4321</option>
+																                <option>999-99-9999</option>
+																                <option>333-33-3333</option>
+																                <option>111-11-1111</option>
+																            </select>
+																        </div>
+																    </div>
+																</div>
+																<div class="col-xs-12 col-sm-5 col-lg-5 col-md-5">
+																    <div class="row form-group">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																            <label class="pull-right" for="searchTravelPrcpe">**PRC/PE:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-2 col-lg-2 col-md-2">
+																             <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="searchTravelPrcpe">
+																                <option selected="selected">Select</option>
+																                <option>1234</option>
+																                <option>3211</option>
+																                <option>9993</option>
+																                <option>3334</option>
+																                <option>1111</option>
+																            </select>
+																        </div>
+																        <div class="col-xs-12 col-sm-5 col-lg-5 col-md-5">
+																             <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="searchTravelPrcpe1" style="width:200px;">
+																                <option selected="selected">Select</option>
+																                <option>123-12-1234</option>
+																                <option>321-31-4321</option>
+																                <option>999-99-9999</option>
+																                <option>333-33-3333</option>
+																                <option>111-11-1111</option>
+																            </select>
+																        </div>
+																    </div>
+																</div>
+																<div class="col-xs-12 col-md-12 col-lg-12 col-sm-12" style="background-color:black;height:0px;margin-bottom: 16px;">
+																	</div>
+																	<div class="col-lg-6 col-sm-6 col-xs-12 col-md-6">
+																	    <div class="form-group row">
+																	        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																	            <label class="pull-right" for="searchTravelSfo">**SFO:</label>
+																	        </div>
+																	        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																	            <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="searchTravelSfo" style="width:250px;">
+																	                <option selected="selected">All</option>
+																	                <option>Yes</option>
+																	                <option>No</option>
+																	            </select>
+																	        </div>
+																	    </div>
+																	</div>
+																	<div class="col-lg-5 col-sm-5 col-xs-12 col-md-5">
+																	    <div class="form-group row">
+																	        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																	            <label class="pull-right" for="searchTravelCostType">**Cost Type:</label>
+																	        </div>
+																	        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																	            <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="searchTravelCostType" style="width:250px;">
+																	                <option selected="selected">All</option>
+																	                <option>Yes</option>
+																	                <option>No</option>
+																	            </select>
+																	        </div>
+																	    </div>
+																	</div>
+																	<div class="col-lg-6 col-sm-6 col-xs-12 col-md-6">
+																	    <div class="form-group row">
+																	        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																	            <label class="pull-right" for="searchTravelScanned">**Scanned:</label>
+																	        </div>
+																	        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																	            <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="searchTravelScanned" style="width:250px;">
+																	                <option selected="selected">All</option>
+																	                <option>Yes</option>
+																	                <option>No</option>
+																	            </select>
+																	        </div>
+																	    </div>
+																    </div>
+																	<div class="col-lg-5 col-sm-5 col-xs-12 col-md-5">
+																	    <div class="form-group row">
+																	        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																	            <label class="pull-right" for="searchTravelRpio">**RPIO:</label>
+																	        </div>
+																	        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																	            <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="searchTravelRpio" style="width:250px;">
+																	                <option selected="selected">All</option>
+																	                <option>Yes</option>
+																	                <option>No</option>
+																	            </select>
+																	        </div>
+																	    </div>
+																	</div>
+																	<div class="col-lg-6 col-sm-6 col-xs-12 col-md-6">
+																	    <div class="form-group row">
+																	        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																	            <label class="pull-right" for="searchTravelQa">**QA:</label>
+																	        </div>
+																	        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																	            <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="searchTravelQa" style="width:250px;">
+																	                <option selected="selected">All</option>
+																	                <option>Yes</option>
+																	                <option>No</option>
+																	            </select>
+																	        </div>
+																	    </div>
+																	</div>
+																	<div class="col-lg-5 col-sm-5 col-xs-12 col-md-5">
+																	    <div class="form-group row">
+																	        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																            	<label class="pull-right" for="searchTravelRedacted">**Redacted:</label>
+																	        </div>
+																	        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																	            <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="searchTravelRedacted" style="width:250px;">
+																	                <option selected="selected">All</option>
+																	              <option>Yes</option>
+																	                <option>No</option>
+																	            </select>
+																	        </div>
+																	    </div>
+																	</div>
+																	<div class="col-lg-6 col-sm-6 col-xs-12 col-md-6">
+																	    <div class="form-group row">
+																	        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																	            <label class="pull-right" for="searchTravelIndex">**Index:</label>
+																	        </div>
+																	        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																	            <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="searchTravelIndex" style="width:250px;">
+																	                <option selected="selected">All</option>
+																	                <option>Yes</option>
+																	                <option>No</option>
+																	            </select>
+																	        </div>
+																	    </div>
+																	</div>
+																	<div class="col-xs-12 col-md-12 col-lg-12 col-sm-12" style="background-color:black;height:0px;margin-bottom: 16px;">
+																	</div>
+											
+																	<div class="col-lg-6 col-sm-6 col-xs-12 col-md-6">
+																    <div class="row form-group">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																            <label class="pull-right" for="searchTravelNewOrg">New Org:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																            <select id="searchTravelNewOrg"  class="barcodeSearchForm form-control select2 oc_select_box_width" style="width:250px;">
+																                <option selected="selected">Select</option>
+																                <option>123-12-1234</option>
+																                <option>321-31-4321</option>
+																                <option>999-99-9999</option>
+																                <option>333-33-3333</option>
+																            </select>
+																        </div>
+																    </div>
+																</div>
+																<div class="col-lg-5 col-sm-5 col-xs-12 col-md-5">
+																    <div class="row form-group">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																            <label class="pull-right" for="searchTravelDetailedCost">Detailed Cost:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																            <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="searchTravelDetailedCost" style="width:250px;">
+																                <option selected="selected">Select</option>
+																                <option>1231212341</option>
+															                </select>
+																        </div>
+																    </div>
+																</div>
+																<div class="col-lg-6 col-sm-6 col-xs-12 col-md-6">
+																    <div class="form-group row">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																             <label class="pull-right" for="searchTravelAwa">AWA:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																             <select class="barcodeSearchForm form-control  select3" id="searchTravelAwa" style="width:250px;">
+																                <option selected="selected">Select</option>
+																                <option>1990</option>
+																            </select>
+																        </div>
+																    </div>
+																</div>
+																<div class="col-lg-5 col-sm-5 col-xs-12 col-md-5">
+																    <div class="form-group row">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																             <label class="pull-right" for="searchTravelRdf1">RDF1:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																             <select class="barcodeSearchForm form-control  select3" id="searchTravelRdf1" style="width:250px;">
+																                <option selected="selected">Select</option>
+																                <option>199019901990</option>
+																            </select>
+																        </div>
+																    </div>
+																</div>
+																<div class="col-lg-6 col-sm-6 col-xs-12 col-md-6">
+																    <div class="form-group row">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																             <label class="pull-right" for="searchTravelRdf2">RDF2:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																             <select class="barcodeSearchForm form-control  select3" id="searchTravelRdf2" style="width:250px;">
+																                <option selected="selected">Select</option>
+																                <option>199019901990</option>
+																            </select>
+																        </div>
+																    </div>
+																</div>
+																<div class="col-lg-5 col-sm-5 col-xs-12 col-md-5">
+																    <div class="form-group row">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																             <label class="pull-right" for="searchTravelItProject">IT Project:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																             <select class="barcodeSearchForm form-control  select3" id="searchTravelItProject" style="width:250px;">
+																                <option selected="selected">Select</option>
+																                <option>199019901</option>
+																            </select>
+																        </div>
+																         <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																			<button id="barcodeTravelretrieve" type="button" class="btn btn-primary waves-effect waves-light barcodeTravelsearch_retrive"><i class="fa fa-search"></i> Search</button>
+																		</div>
+																    </div>
+																</div>
+															</div>
+														</div>
+			                        				</div>
+			                        	        </div>
+		                        	        </div>
+	                        	        </form>
+			                        </div>
+       						    </div>
+       						    <div class="tab-pane fade" id="searchVoucherTab" role="tabpanel" aria-labelledby="search_travel_tab">
+	                        		<div class="tab-content" id="searchVoucherTabContent">
+	                        			<form class="" action="#">						
+											<div class="row">
+					                        	<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
+				                        			<div class="row">
+				           		             			<div class="col-lg-12 col-sm-12 col-xs-12 col-md-12">
+															<div class="row form-group">
+																<div class="col-lg-6 col-sm-6 col-xs-12 col-md-6">
+																    <div class="row form-group">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																             <label class="pull-right" for="barcodeSearchVoucherBarcode">Barcode:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																            <input type="text" id="barcodeSearchVoucherBarcode"  class="searchVoucherBarcodeForm form-control select2 oc_select_box_width"  style="width:250px;"/>
+																		</div>
+																    </div>	
+																</div>
+																<div class="col-lg-5 col-sm-5 col-xs-12 col-md-5">
+																    <div class="row form-group">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																            <label class="pull-right" for="barcodeSearchVoucherContract">Contract #:</label>
+																        </div>
+																        	<div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																             <input type="text" class="barcodeSearchForm form-control  select3" id="barcodeSearchVoucherContract"  style="width:250px;"/>
+																         </div>
+																       
+																    </div>
+																</div>
+														        <div class="col-xs-12 col-sm-6 col-lg-6 col-md-6">
+																    <div class="form-group row">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																             <label class="pull-right" for="barcodeSearchVoucherVoucher">*Voucher #:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																             <input type="text" class="barcodeSearchForm form-control  select3" id="barcodeSearchVoucherVoucher1"  style="width:250px;"/>
+																         </div>
+																    </div>
+																</div>
+																
+																<div class="col-lg-5 col-sm-5 col-xs-12 col-md-5">
+																    <div class="form-group row">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																             <label class="pull-right" for="searchVoucherSchedule">Schedule #:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-33">
+																             <input type="text" class="barcodeSearchForm form-control  select3" id="searchVoucherSchedule"  style="width:250px;"/>
+																        </div>
+																    </div>
+																</div>
+																<div class="col-xs-12 col-sm-6 col-lg-6 col-md-6">
+															    	<div class="form-group row">
+															        	<div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+														            		<label class="pull-right" for="barcodeSearchVoucherScheduleDate">Schedule Date:</label>
+															        	</div>
+															        		<div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																            	<div class="input-group">
+																					<input type="text" id="barcodeSearchVoucherFromDate" class="datePicker barcodeSearchForm form-control"  style="width:250px;" name="date"/>
+  																			        <span class="input-group-addon open-datetimepicker">
+																			        	<i class="fa fa-calendar"></i>
+																			        </span>
+																				</div>
+																        	</div>
+																        	<div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																           		<div class="input-group">
+																					<input type="text" id="searchVoucherToDate" class="datePicker barcodeSearchForm form-control"  style="width:0px;" name="date"/>
+  																			        <span class="input-group-addon open-datetimepicker">
+																			        	<i class="fa fa-calendar"></i>
+																			        </span>
+																				</div>
+																        	</div>
+																        </div>
+																	</div>
+																	<div class="col-xs-12 col-md-12 col-lg-12 col-sm-12" style="background-color:black;height:0px;margin-bottom: 16px;">
+																	</div>
+																	<div class="col-lg-6 col-sm-6 col-xs-12 col-md-6">
+																    <div class="row form-group">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																            <label class="pull-right" for="barcodeSearchVoucherSiteId">Site ID:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-2 col-lg-2 col-md-2">
+																             <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="barcodeSearchVoucherSiteId">
+																                <option selected="selected">Select</option>
+																                <option>1234</option>
+																                <option>3211</option>
+																                <option>9993</option>
+																                <option>3334</option>
+																                <option>1111</option>
+																            </select>
+																        </div>
+																        <div class="col-xs-12 col-sm-5 col-lg-5 col-md-5">
+																             <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="barcodeSearchVoucherSiteId1" style="width:200px;">
+																                <option selected="selected">Select</option>
+																                <option>123-12-1234</option>
+																                <option>321-31-4321</option>
+																                <option>999-99-9999</option>
+																                <option>333-33-3333</option>
+																                <option>111-11-1111</option>
+																            </select>
+																        </div>
+																    </div>
+																</div>
+																<div class="col-xs-12 col-sm-5 col-lg-5 col-md-5">
+																    <div class="row form-group">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																            <label class="pull-right" for="barcodeSearchVoucherActionCode">**Action Code:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-2 col-lg-2 col-md-2">
+																             <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="barcodeSearchVoucherActionCode">
+																                <option selected="selected">Select</option>
+																                <option>1234</option>
+																                <option>3211</option>
+																                <option>9993</option>
+																                <option>3334</option>
+																                <option>1111</option>
+																            </select>
+																        </div>
+																        <div class="col-xs-12 col-sm-5 col-lg-5 col-md-5">
+																             <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="barcodeSearchVoucherActionCode1" style="width:200px;">
+																                <option selected="selected">Select</option>
+																                <option>123-12-1234</option>
+																                <option>321-31-4321</option>
+																                <option>999-99-9999</option>
+																                <option>333-33-3333</option>
+																                <option>111-11-1111</option>
+																            </select>
+																        </div>
+																    </div>
+																</div>
+																<div class="col-lg-6 col-sm-6 col-xs-12 col-md-6">
+																    <div class="row form-group">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																            <label class="pull-right" for="barcodeSearchVoucherOperableUnit">**Operable Unit:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-2 col-lg-2 col-md-2">
+																             <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="barcodeSearchVoucherOperableUnit">
+																                <option selected="selected">Select</option>
+																                <option>1234</option>
+																                <option>3211</option>
+																                <option>9993</option>
+																                <option>3334</option>
+																                <option>1111</option>
+																            </select>
+																        </div>
+																        <div class="col-xs-12 col-sm-5 col-lg-5 col-md-5">
+																             <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="barcodeSearchVoucherOperableUnit1" style="width:200px;">
+																                <option selected="selected">Select</option>
+																                <option>123-12-1234</option>
+																                <option>321-31-4321</option>
+																                <option>999-99-9999</option>
+																                <option>333-33-3333</option>
+																                <option>111-11-1111</option>
+																            </select>
+																        </div>
+																    </div>
+																</div>
+																<div class="col-xs-12 col-sm-5 col-lg-5 col-md-5">
+																    <div class="row form-group">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																            <label class="pull-right" for="barcodeSearchVoucherFund">***Fund:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-2 col-lg-2 col-md-2">
+																             <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="barcodeSearchVoucherFund">
+																                <option selected="selected">Select</option>
+																                <option>1234</option>
+																                <option>3211</option>
+																                <option>9993</option>
+																                <option>3334</option>
+																                <option>1111</option>
+																            </select>
+																        </div>
+																        <div class="col-xs-12 col-sm-5 col-lg-5 col-md-5">
+																             <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="searchVoucherFund1" style="width:200px;">
+																                <option selected="selected">Select</option>
+																                <option>123-12-1234</option>
+																                <option>321-31-4321</option>
+																                <option>999-99-9999</option>
+																                <option>333-33-3333</option>
+																                <option>111-11-1111</option>
+																            </select>
+																        </div>
+																    </div>
+																</div>
+																<div class="col-lg-6 col-sm-6 col-xs-12 col-md-6">
+																    <div class="row form-group">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																            <label class="pull-right" for="searchVoucherOrgCode">***Org Code:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-2 col-lg-2 col-md-2">
+																             <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="searchVoucherOrgCode">
+																                <option selected="selected">Select</option>
+																                <option>1234</option>
+																                <option>3211</option>
+																                <option>9993</option>
+																                <option>3334</option>
+																                <option>1111</option>
+																            </select>
+																        </div>
+																        <div class="col-xs-12 col-sm-5 col-lg-5 col-md-5">
+																             <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="searchVoucherOrgcode1" style="width:200px;">
+																                <option selected="selected">Select</option>
+																                <option>123-12-1234</option>
+																                <option>321-31-4321</option>
+																                <option>999-99-9999</option>
+																                <option>333-33-3333</option>
+																                <option>111-11-1111</option>
+																            </select>
+																        </div>
+																    </div>
+																</div>
+																<div class="col-xs-12 col-sm-5 col-lg-5 col-md-5">
+																    <div class="row form-group">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																            <label class="pull-right" for="searchVoucherPrcpe">***PRC/PE:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-2 col-lg-2 col-md-2">
+																             <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="searchVoucherPrcpe">
+																                <option selected="selected">Select</option>
+																                <option>1234</option>
+																                <option>3211</option>
+																                <option>9993</option>
+																                <option>3334</option>
+																                <option>1111</option>
+																            </select>
+																        </div>
+																        <div class="col-xs-12 col-sm-5 col-lg-5 col-md-5">
+																             <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="searchVoucherPrcpe1" style="width:200px;">
+																                <option selected="selected">Select</option>
+																                <option>123-12-1234</option>
+																                <option>321-31-4321</option>
+																                <option>999-99-9999</option>
+																                <option>333-33-3333</option>
+																                <option>111-11-1111</option>
+																            </select>
+																        </div>
+																    </div>
+																</div>
+																<div class="col-lg-12 col-sm-12 col-xs-12 col-md-12" style="background-color:black;height:0px;margin-bottom: 16px;">
+																	</div>
+																	<div class="col-lg-6 col-sm-6 col-xs-12 col-md-6">
+																	    <div class="form-group row">
+																	        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																	            <label class="pull-right" for="searchVoucherSfo">***SFO:</label>
+																	        </div>
+																	        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																	            <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="searchVoucherSfo" style="width:250px;">
+																	                <option selected="selected">All</option>
+																	                <option>Other</option>
+																	            </select>
+																	        </div>
+																	    </div>
+																	</div>
+																	<div class="col-lg-5 col-sm-5 col-xs-12 col-md-5">
+																	    <div class="form-group row">
+																	        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																	            <label class="pull-right" for="searchVoucherCostType">***Cost Type:</label>
+																	        </div>
+																	        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																	            <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="searchVoucherCostType" style="width:250px;">
+																	                <option selected="selected">All</option>
+																	                <option>Other</option>
+																	            </select>
+																	        </div>
+																	    </div>
+																	</div>
+																	<div class="col-lg-6 col-sm-6 col-xs-12 col-md-6">
+																	    <div class="form-group row">
+																	        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																	            <label class="pull-right" for="searchVoucherScanned">***Scanned:</label>
+																	        </div>
+																	        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																	            <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="searchVoucherScanned" style="width:250px;">
+																	                <option selected="selected">All</option>
+																	                <option>Other</option>
+																	            </select>
+																	        </div>
+																	    </div>
+																    </div>
+																	<div class="col-lg-5 col-sm-5 col-xs-12 col-md-5">
+																	    <div class="form-group row">
+																	        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																	            <label class="pull-right" for="searchVoucherRpio">***RPIO:</label>
+																	        </div>
+																	        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																	            <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="searchVoucherRpio" style="width:250px;">
+																	                <option selected="selected">All</option>
+																	                <option>Other</option>
+																	            </select>
+																	        </div>
+																	    </div>
+																	</div>
+																	<div class="col-lg-6 col-sm-6 col-xs-12 col-md-6">
+																	    <div class="form-group row">
+																	        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																	            <label class="pull-right" for="searchVoucherQa">***QA:</label>
+																	        </div>
+																	        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																	            <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="searchVoucherQa" style="width:250px;">
+																	                <option selected="selected">All</option>
+																	                <option>Other</option>
+																	            </select>
+																	        </div>
+																	    </div>
+																	</div>
+																	<div class="col-lg-5 col-sm-5 col-xs-12 col-md-5">
+																	    <div class="form-group row">
+																	        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																            	<label class="pull-right" for="searchVoucherRedacted">***Redacted:</label>
+																	        </div>
+																	        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																	            <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="searchVoucherRedacted" style="width:250px;">
+																	                <option selected="selected">All</option>
+																	                <option>Other</option>
+																	            </select>
+																	        </div>
+																	    </div>
+																	</div>
+																	<div class="col-lg-6 col-sm-6 col-xs-12 col-md-6">
+																	    <div class="form-group row">
+																	        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																	            <label class="pull-right" for="searchVoucherIndex">***Index:</label>
+																	        </div>
+																	        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																	            <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="searchVoucherIndex" style="width:250px;">
+																	                <option selected="selected">All</option>
+																	                <option>Other</option>
+																	            </select>
+																	        </div>
+																	    </div>
+																	</div>
+																	<div class="col-xs-12 col-md-12 col-lg-12 col-sm-12" style="background-color:black;height:0px;margin-bottom: 16px;">
+																	</div>
+											
+																	<div class="col-lg-6 col-sm-6 col-xs-12 col-md-6">
+																    <div class="row form-group">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																            <label class="pull-right" for="searchVoucherNewOrg">New Org:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																            <select id="searchVoucherNewOrg"  class="barcodeSearchForm form-control select2 oc_select_box_width" style="width:250px">
+																                <option selected="selected">Select</option>
+																                <option>123-12-1234</option>
+																                <option>321-31-4321</option>
+																                <option>999-99-9999</option>
+																                <option>333-33-3333</option>
+																            </select>
+																        </div>
+																    </div>
+																</div>
+																<div class="col-lg-5 col-sm-5 col-xs-12 col-md-5">
+																    <div class="row form-group">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																            <label class="pull-right" for="searchVoucherDetailedCost">Detailed Cost:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																            <select class="barcodeSearchForm form-control  select2 siteId_select_box_width" id="searchVoucherDetailedCost" style="width:250px;">
+																                <option selected="selected">Select</option>
+																                <option>1231212341</option>
+															                </select>
+																        </div>
+																    </div>
+																</div>
+																<div class="col-lg-6 col-sm-6 col-xs-12 col-md-6">
+																    <div class="form-group row">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																             <label class="pull-right" for="searchVoucherAwa">AWA:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																             <select class="barcodeSearchForm form-control  select3" id="searchVoucherAwa" style="width:250px;">
+																                <option selected="selected">Select</option>
+																                <option>1990</option>
+																            </select>
+																        </div>
+																    </div>
+																</div>
+																<div class="col-lg-5 col-sm-5 col-xs-12 col-md-5">
+																    <div class="form-group row">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																             <label class="pull-right" for="searchVoucherRdf1">RDF1:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																             <select class="barcodeSearchForm form-control  select3" id="searchVoucherRdf1" style="width:250px">
+																                <option selected="selected">Select</option>
+																                <option>199019901990</option>
+																            </select>
+																        </div>
+																    </div>
+																</div>
+																<div class="col-lg-6 col-sm-6 col-xs-12 col-md-6">
+																    <div class="form-group row">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																             <label class="pull-right" for="searchVoucherRdf2">RDF2:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																             <select class="barcodeSearchForm form-control  select3" id="searchVoucherRdf2" style="width:250px">
+																                <option selected="selected">Select</option>
+																                <option>199019901990</option>
+																            </select>
+																        </div>
+																    </div>
+																</div>
+																<div class="col-lg-5 col-sm-5 col-xs-12 col-md-5">
+																    <div class="form-group row">
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																             <label class="pull-right" for="searchVoucherItProject">IT Project:</label>
+																        </div>
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																             <select class="barcodeSearchForm form-control  select3" id="searchVoucherItProject" style="width:250px;">
+																                <option selected="selected">Select</option>
+																                <option>199019901</option>
+																            </select>
+																        </div>
+																        <div class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+																			<button type="button" class="btn btn-primary "><i class="fa fa-search"></i> Search</button>
+																		</div>
+																    </div>
+																</div>
+															</div>
+														</div>
+			                        				</div>
+			                        	        </div>
+		                        	        </div>
+	                        	        </form>
+	                        		
+	                        		</div>
+                        		</div>
+                            </div>
+                 		</div>   
+				 	</div>
+				 </div>
+			 </div>
+	     </div>
+	</div>
+</body>
+</html>

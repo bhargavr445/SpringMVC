@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<p>This is Parent class</p>
+<div class="content">
+
+<form name="contactForm" novalidate>
+	<input type="text" placeholder="name" name="name" ng-model="contact.name">
+	<input type="email" placeholder="Email" name="name2" ng-model="contact.email">
+	<textarea placeholder="your message" name="message" ng-model="contact.message"></textarea>
+	<submit type="submit" value="send"/>
+	{{contact}}
+ </form>
+</div>
+</body>
+</html>

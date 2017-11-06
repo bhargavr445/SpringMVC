@@ -1,0 +1,30 @@
+<form>
+<input type="text" placeholder="Enter Name" ng-model="name"></input>
+<button type="submit" ng-click="searchByNameTest(name)">Search</button>
+</form>
+
+<!-- <p>{{testrecord.name}}</p> -->
+<!-- <p>{{testrecord.estimatedAnnualSalary}}</p> -->
+
+	<table datatable="" id="datatable-buttons" class="datatable-buttons table table-striped table-bordered table-hover exportable" style="width:100%;cellspacing:0" data-ng-show = "students.length != 0"> <!-- table-striped  -->
+			                        <thead style = "color:black;background-color:lightblue">
+			                            <tr>
+			                                <th>NAME</th>
+			                                <th>JOB TITLE</th>
+			                                <th>DEPARTMENT</th>
+			                                <th>ANNUAL SALARY</th>
+			                                <th>ESTIMATED ANNUAL SALARY</th>
+			                                
+			                            </tr>
+			                        </thead>
+		                            <tbody>
+		                                <tr ng-repeat= "student in testrecord">
+		                                    <td>{{student.name}}</td>
+		                                    <td>{{student.jobTitle}}</td>
+		                                    <td>{{student.department}}</td>
+		                                    <td>{{student.annualSalary}}</td>
+		                                    <td>{{student.estimatedAnnualSalary}}</td>
+		                                   
+                                    </tr>
+		                            </tbody>
+		                        </table>

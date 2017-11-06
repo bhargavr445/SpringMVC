@@ -1,0 +1,55 @@
+<form>
+<input type="text" class="form-group" ng-model="contract.name" placeholder="Enter Name">
+<input type="text" class="form-group" ng-model="contract.jobTitle" placeholder="Enter jobTitle">
+<button type="submit" class= "btn btn-primary btn-sm"ng-click="searchContract(contract)">Search</button>
+<button type="reset" class= "btn btn-danger btn-sm">Cancel</button>
+
+<label>Department</label>
+		                        <select ng-model="contract.department" ng-change="searchContract(contract)">
+ 		                        <option ng-repeat = "department in deptList" value="{{department}}">{{department}}</option> 
+		                        </select>
+		                        
+		                        <label>Job Title</label>
+		                        <select ng-model="student.jobTitle" ng-change="searchByJobTitle(student)">
+ 		                        <option ng-repeat = "jobTitle in jobTitleList" value="{{jobTitle}}">{{jobTitle}}</option> 
+		                        </select>
+		                        
+		                        <input type="text" ng-model="name" placeholder = "Enter Name">
+<!-- 		                        //<input type="text" ng-model="student.id" placeholder = "Enter id"> -->
+		                        <button type="submit" ng-click="searchByNameString(name)">Submit Name</button>
+</form>
+
+<div class="search-input-content halflings halflings-search">
+    <input type="text" placeholder="search Table Content"  ng-model="search">
+</div>
+<table datatable="" class="datatable-buttons table table-striped table-bordered table-hover exportable" style="width:100%;cellspacing:0"> 
+			                        <thead style = "color:black;background-color:green">
+			                            <tr>
+			                                <th>NAME</th>
+			                                <th>JOB TITLE</th>
+			                                 <th>Dept</th> 
+			                                 <th>Sal</th>
+			                                <th>Annua Sal</th>
+			                                <th>Tax</th>
+			                               <th>Actions</th>
+			                            </tr>
+			                        </thead>
+		                            <tbody>
+		                                <tr ng-repeat= "student in contractList | filter:search ">
+		                                    <td>{{student.name}}</td>
+		                                     <td><a href = "" ng-click = "searchByJobTitle(student.jobTitle)">{{student.jobTitle}}</a></td>
+		                                    <td>{{student.department}}</td>
+		                                    <td>{{student.annualSalary}}</td>
+		                                    <td>{{student.estimatedAnnualSalary}}</td>
+		                                     <td>{{student.tax}}</td>
+		                                    <th>
+	                                    
+<!--  <button type="submit" ><a  ng-click="editStudent(student)">EDIT</a></button>   -->
+ <button type="submit" value="submit" class="btn btn-primary btn-sm" ng-click="editContract(student)"><i class="glyphicon glyphicon-edit" aria-hidden="true"></i></button>
+		                                    <button type="submit" value="submit" class="btn btn-danger btn-sm" ng-click="deleteContract(student)">
+  <i class="glyphicon glyphicon-trash" aria-hidden="true"></i></button>
+ 
+   </th>
+                                    </tr>
+		                            </tbody>
+		                        </table>

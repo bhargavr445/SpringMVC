@@ -1,0 +1,26 @@
+<table datatable="" class="datatable-buttons table table-striped table-bordered table-hover exportable" style="width:100%;cellspacing:0"> 
+			                        <thead style = "color:black;background-color:green">
+			                            <tr>
+			                                <th>NAME</th>
+			                                <th>JOB TITLE</th>
+			                                 <th>Dept</th> 
+			                                
+			                                <th>Annua Sal</th>
+			                                <th>Est Annual Sal</th>
+			                               <th>Actions</th>
+			                            </tr>
+			                        </thead>
+		                            <tbody>
+		                                <tr ng-repeat= "student in empList">
+		                                    <td>{{student.name}}</td>
+		                                     <td>{{student.jobTitle}}</a></td>
+		                                    <td>{{student.department}}</td>
+		                                    <td>{{student.annualSalary}}</td>
+		                                    <td>{{student.estimatedAnnualSalary}}</td>
+		                                    <td>
+		                                    <button type="submit" value="submit" class="btn btn-primary btn-sm" ng-click="editContract2(student)"><i class="glyphicon glyphicon-edit" aria-hidden="true"></i></button>
+		                                    <button type="submit" value="submit" class="btn btn-danger btn-sm" ng-click="deleteStudent2(student)"><i class="glyphicon glyphicon-trash" aria-hidden="true"></i></button>
+		                                    </td>
+                                    </tr>
+		                            </tbody>
+		                        </table>

@@ -1,0 +1,52 @@
+<form>
+	<input type="text" ng-model="emp.empNo" placeholder="Enter Id"></input>
+	<button type="submit" class="btn btn-primary btn-sm" ng-click="searchById(emp)">Search</button>
+</form>
+
+<form>
+	<input type="text" ng-model="location" placeholder="Enter location"></input>
+	<button type="submit" class="btn btn-primary btn-sm" ng-click="searchBylocation(location)">Search</button>
+</form>
+</br>
+<p>Object check Form</p>
+<form>
+	<input type="text" ng-model="location" placeholder="Enter location"></input>
+	<input type="text" ng-model="location" placeholder="Enter Name"></input>
+	<button type="submit" class="btn btn-primary btn-sm" ng-click="searchBylocation(location)">Search</button>
+</form>
+
+<button type="submit" class="btn btn-danger btn-sm" ng-click="addEmployee()">Search</button>
+
+
+<table datatable="" class="datatable-buttons table table-striped table-bordered table-hover" style="width:100%;cellspacing:0"> 
+	<thead style = "color:black;background-color:green">
+	    <tr>
+	        <th>Emp No</th>
+	        <th>Emp Name</th>
+	         <th>Job Title</th> 
+	         <th>Manager</th>
+	        <th>Sal</th>
+	        <th>Commision</th>
+	        <th>Department</th> ˘
+	       <th>Actions</th>
+	    </tr>
+     </thead>
+     <tbody>
+	     <tr ng-repeat= "employee in empList | filter:search ">
+	         <td><a href = "" data-ng-click = "getDepartment(employee)">{{employee.empNo}}</a></td>
+<!-- 	         <td><a href = "" ng-click = "searchByJobTitle(employee.jobTitle)">{{employee.eName}}</a></td> -->
+	         <td>{{employee.eName}}</td>
+	         <td>{{employee.job}}</td>
+	         <td>{{employee.mgr}}</td>
+	         <td>{{employee.sal}}</td>
+	          <td>{{employee.comission}}</td>
+	          <td>{{dept.deptNo}}</td>
+	         <th>
+				<button type="submit" value="submit" class="btn btn-primary btn-sm" ng-click="editContract(employee)"><i class="glyphicon glyphicon-edit" aria-hidden="true"></i></button>
+                <button type="submit" value="submit" class="btn btn-danger btn-sm" ng-click="deleteContract(employee)">
+	 				<i class="glyphicon glyphicon-trash" aria-hidden="true"></i></button>
+	
+	  		 </th>
+      	</tr>
+      </tbody>
+   </table>
