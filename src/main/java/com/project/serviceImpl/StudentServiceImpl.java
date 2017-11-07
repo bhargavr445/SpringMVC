@@ -12,11 +12,11 @@ import com.project.dao.StudentDao;
 public class StudentServiceImpl implements StudentService {
 
 	@Autowired
-	StudentDao StudentDao;
-	public List<Student> getAllStudents() {
-		List<Student> allStudents = StudentDao.getAllStudents();
-		return allStudents;
-	}
+	StudentDao studentDao;
+//	public List<Student> getAllStudents(int id) {
+//		Student allStudents = studentDao.getAllStudents(id);
+//		return allStudents;
+//	}
 	public boolean update(Student student) {
 		
 		return false;
@@ -24,6 +24,18 @@ public class StudentServiceImpl implements StudentService {
 	public boolean delete(Student student) {
 		
 		return false;
+	}
+	public int createStudent(Student student) {
+		int status = studentDao.createStudent(student);
+		return status;
+	}
+	public List<Student> getAlldata() {
+		List<Student> stuList = studentDao.getAllData();
+		return stuList;
+	}
+	public void deleteStudent(Student student) {
+		studentDao.deleteStudent(student);
+		
 	}
 
 }

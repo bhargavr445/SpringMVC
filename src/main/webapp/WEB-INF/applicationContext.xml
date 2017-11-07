@@ -14,34 +14,40 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 <context:component-scan base-package="com.project"></context:component-scan>
 <mvc:annotation-driven/>
 <mvc:resources mapping="/resources/**" location="/resources/" />
-<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+<!-- <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://localhost:3306/ownproject" />
+        <property name="url" value="jdbc:mysql://localhost:3306" />
         <property name="username" value="root" />
         <property name="password" value="root" />
-    </bean>
+            
+    </bean> -->
 <!-- Session Factory Declaration -->
-    <bean id="sessionFactory"
+    <!-- <bean id="sessionFactory"
         class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
-        <property name="packagesToScan" value="com.entities" />
+        <property name="packagesToScan" value="com.project.entities.*" />
         <property name="hibernateProperties">
+        
+        
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.enable_lazy_load_no_trans">true</prop>
-                <prop key="hibernate.default_schema">ownproject</prop>
+                <prop key="hibernate.default_schema">test</prop>
                 <prop key="format_sql">true</prop>
                 <prop key="use_sql_comments">true</prop>
-                <!-- <prop key="hibernate.hbm2ddl.auto">create</prop> -->
+                <prop key="hibernate.hbm2ddl.auto">create</prop>
             </props>
         </property>
-    </bean>
+        
+        <property name=""></property>
+        
+    </bean> -->
  
-    <tx:annotation-driven transaction-manager="transactionManager" />
+   <!--  <tx:annotation-driven transaction-manager="transactionManager" />
  
     <bean id="transactionManager"
         class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory" />
-    </bean>
+    </bean> -->
 </beans>
