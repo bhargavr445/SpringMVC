@@ -129,6 +129,21 @@ Configuration configuration = new Configuration();
 	 factory.close();
 		
 	}
+
+
+	public Student getStudent(int id) {
+		// TODO Auto-generated method stub
+		Configuration configuration = new Configuration();
+		configuration.configure("hibernate.cfg.xml");
+		
+		//Create session factory instance
+		 SessionFactory factory = configuration.buildSessionFactory();
+		 Session openSession = factory.openSession();
+		 //Transaction beginTransaction = openSession.beginTransaction();
+		 Student student = (Student)openSession.get(Student.class, id);
+		 //beginTransaction.commit();
+		return student;
+	}
 	
 	
 }

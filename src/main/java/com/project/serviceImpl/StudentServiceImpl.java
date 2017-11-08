@@ -37,5 +37,9 @@ public class StudentServiceImpl implements StudentService {
 		studentDao.deleteStudent(student);
 		
 	}
+	public Student getStudent(int id) {
+		Student studentDetails=studentDao.getStudent(id);
+		return studentDetails;
+	}
 
 }

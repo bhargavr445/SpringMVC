@@ -11,5 +11,6 @@ public interface StudentDao {
 	int createStudent(Student student);
 	List<Student> getAllData();
 	void deleteStudent(Student student);
+	Student getStudent(int id);
 
 }

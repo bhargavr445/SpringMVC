@@ -51,8 +51,16 @@ public class Login {
 ////		System.out.println(studentsList.getlName());
 //		return studentsList;
 //	}
+	
+	@RequestMapping(value="/getStudent/{id}", method=RequestMethod.GET)
+	public @ResponseBody Student getStudent(@PathVariable("id") int id) {
+		Student studentDetails = studentService.getStudent(id);
+		System.out.println(studentDetails.getEmail());
+		return studentDetails;
+	}
+	
 	@RequestMapping(value="/getAllData", method=RequestMethod.GET)
-	List<Student> getAlldata(){
+	public @ResponseBody List<Student> getAlldata(){
 		List<Student> studentsList = studentService.getAlldata();
 		System.out.println(studentsList.size());
 		return studentsList;
@@ -60,7 +68,7 @@ public class Login {
 	
 	
 	@RequestMapping(value="/student", method=RequestMethod.POST)
-	void createStudent(@RequestBody Student student) {
+	public @ResponseBody void createStudent(@RequestBody Student student) {
 		System.out.println(student.getEmail());
 		studentService.createStudent(student);
 //		return 1;
@@ -72,7 +80,7 @@ public class Login {
 		return mv;
 	}
 	@RequestMapping(value="/deleteStudent", method=RequestMethod.DELETE)
-	void deleteStudent(@RequestBody Student student) {
+	public @ResponseBody void deleteStudent(@RequestBody Student student) {
 		studentService.deleteStudent(student);
 	}
 	

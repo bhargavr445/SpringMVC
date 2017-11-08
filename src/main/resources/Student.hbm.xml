@@ -10,5 +10,4 @@
 	<property name="lName" column="lName" type="string" />
 	<property name="email" column="email" type="string" />
 </class>
- 
 </hibernate-mapping>
