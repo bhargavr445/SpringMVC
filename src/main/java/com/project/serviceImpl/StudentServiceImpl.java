@@ -41,5 +41,14 @@ public class StudentServiceImpl implements StudentService {
 		Student studentDetails=studentDao.getStudent(id);
 		return studentDetails;
 	}
+	public Student getStudentById(int id) {
+		// TODO Auto-generated method stub
+		Student studentList = studentDao.getStudentById(id);
+		return studentList;
+	}
+	public void createStudentTest(Student student) {
+		studentDao.createStudentTest(student);
+		
+	}
 
 }

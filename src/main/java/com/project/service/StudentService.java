@@ -13,5 +13,7 @@ public interface StudentService {
 	List<Student> getAlldata();
 	void deleteStudent(Student student);
 	Student getStudent(int id);
+	Student getStudentById(int id);
+	void createStudentTest(Student student);
 	
 }

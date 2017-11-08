@@ -56,20 +56,8 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider', function($ro
 	  templateUrl : 'view/editStudent.html',
 		controller : 'StudentEditController'
   })
- 
 .otherwise({
   redirectTo:'/home'
 });
  $locationProvider.hashPrefix('');
 }]);
-/*app.directive('myDir',function(randomDetails){
-  retutn{
-    restrict:'E',
-    scope:{
-      myDetails:'='
-    }
-templateUrl:'view/resource',
-controller.function($scope){
-}
-  };
-});*/

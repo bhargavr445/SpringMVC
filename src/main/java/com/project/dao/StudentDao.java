@@ -12,5 +12,7 @@ public interface StudentDao {
 	List<Student> getAllData();
 	void deleteStudent(Student student);
 	Student getStudent(int id);
+	Student getStudentById(int id);
+	void createStudentTest(Student student);
 
 }

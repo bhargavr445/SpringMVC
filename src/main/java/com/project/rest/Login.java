@@ -41,16 +41,6 @@ public class Login {
 		return mv;
 	}
 	
-//	@RequestMapping(value="/getStudents/{id}", method=RequestMethod.GET)
-//	List<Student> getAllStudents(@PathVariable("id") int id){
-//		//System.out.println(id);
-//		List<Student> studentsList = studentService.getAllStudents(id);
-////		System.out.println(studentsList.getEmail());
-////		System.out.println(studentsList.getId());
-////		System.out.println(studentsList.getfName());
-////		System.out.println(studentsList.getlName());
-//		return studentsList;
-//	}
 	
 	@RequestMapping(value="/getStudent/{id}", method=RequestMethod.GET)
 	public @ResponseBody Student getStudent(@PathVariable("id") int id) {
@@ -84,4 +74,15 @@ public class Login {
 		studentService.deleteStudent(student);
 	}
 	
+	@RequestMapping(value="/getStudentById/{id}", method=RequestMethod.GET)
+	public @ResponseBody Student getStudentById(@PathVariable("id") int id) {
+		Student stuList = studentService.getStudentById(id);
+		return stuList;
+	}
+	
+	@RequestMapping(value="/createStudent", method=RequestMethod.POST)
+	public int createStudentTest(@RequestBody Student student) {
+		studentService.createStudentTest(student);
+		return 1;
+	}
 }

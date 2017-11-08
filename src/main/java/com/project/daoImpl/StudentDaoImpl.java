@@ -4,10 +4,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Restrictions;
+import org.hibernate.criterion.SimpleExpression;
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.hibernate.SessionFactory;
 //import org.springframework.beans.factory.annotation.Autowired;
@@ -143,6 +147,35 @@ Configuration configuration = new Configuration();
 		 Student student = (Student)openSession.get(Student.class, id);
 		 //beginTransaction.commit();
 		return student;
+	}
+
+
+	public Student getStudentById(int id) {
+		Configuration configuration = new Configuration();
+		configuration.configure("hibernate.cfg.xml");
+		
+		//Create session factory instance
+		 SessionFactory factory = configuration.buildSessionFactory();
+		 Session openSession = factory.openSession();
+		 Criteria createCriteria = openSession.createCriteria(Student.class);
+		 Criterion eq = Restrictions.eq("id",id);
+		 createCriteria.add(eq);
+		 Student uniqueResult = (Student) createCriteria.uniqueResult();
+		 //Student student = (Student) openSession.get(Student.class, id);
+		return uniqueResult;
+	}
+
+
+	public void createStudentTest(Student student) {
+		Configuration configuration = new Configuration();
+		configuration.configure("hibernate.cfg.xml");
+		
+		//Create session factory instance
+		 SessionFactory factory = configuration.buildSessionFactory();
+		 Session openSession = factory.openSession();
+		 Transaction beginTransaction = openSession.beginTransaction();
+		 openSession.saveOrUpdate(student);
+		 beginTransaction.commit();
 	}
 	
 	
