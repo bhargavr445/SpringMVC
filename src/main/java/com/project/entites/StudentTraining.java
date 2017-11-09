@@ -1,24 +1,13 @@
 package com.project.entites;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "Student")
-public class Student {
-
-	@Id
-	//@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "studentId")
+public class StudentTraining {
+	
 	private int id;
-	@Column(name = "fname")
 	private String fName;
-	@Column(name = "lName")
 	private String lName;
-	@Column(name = "email")
 	private String email;
+	
+	
 	public int getId() {
 		return id;
 	}
@@ -43,7 +32,6 @@ public class Student {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
 	
 
 }
