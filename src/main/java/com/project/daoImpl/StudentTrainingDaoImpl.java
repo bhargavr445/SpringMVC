@@ -64,6 +64,19 @@ public class StudentTrainingDaoImpl implements StudentTrainingDao {
 		openSession.close();
 		factory.close();
 	}
+
+	public void updateStudent(Student student) {
+		Configuration configuration = new Configuration();
+		configuration.configure("hibernate.cfg.xml");
+		SessionFactory factory = configuration.buildSessionFactory();
+		Session openSession = factory.openSession();
+		Transaction beginTransaction = openSession.beginTransaction();
+		openSession.saveOrUpdate(student);
+		beginTransaction.commit();
+		openSession.close();
+		factory.close();
+		
+	}
 	
 	
 	

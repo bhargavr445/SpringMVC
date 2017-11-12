@@ -83,7 +83,6 @@ public class StudentDaoImpl implements StudentDao{
 		 beginTransaction.commit();
 		 openSession.close();
 	     factory.close();
-		
 	}
 
 

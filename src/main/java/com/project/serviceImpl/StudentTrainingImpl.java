@@ -43,4 +43,12 @@ public class StudentTrainingImpl implements StudentTrainingS {
 		
 	}
 
+
+	public void updateStudent(Student student) {
+		studentTrainingDao.updateStudent(student);
+		
+	}
+	
+	
+
 }

@@ -15,4 +15,6 @@ public interface StudentTrainingS {
 
 	void deleteStudent(int id);
 
+	void updateStudent(Student student);
+
 }
