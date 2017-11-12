@@ -23,7 +23,7 @@ public class StudentController {
 		List<Student> studList =   studentTrainingServiceI.getAllStudents();
 		return studList;
 		
-	}
+	}//git test
 	@RequestMapping(value="getStudentById/{id}", method=RequestMethod.GET)
 	public Student getStudentById(@PathVariable("id") int studentId) {
 
