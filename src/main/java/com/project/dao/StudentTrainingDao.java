@@ -17,4 +17,10 @@ public interface StudentTrainingDao {
 
 	void updateStudent(Student student);
 
+	List<String> getStudentNamesList();
+
+	void createStudent(Student stu);
+
+	void deleteStudentByObj(int id);
+
 }

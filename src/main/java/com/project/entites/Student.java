@@ -19,6 +19,20 @@ public class Student {
 	private String lName;
 	@Column(name = "email")
 	private String email;
+	
+	Student(){
+		
+	}
+	
+	public Student(int id, String fName, String lName, String email) {
+		super();
+		this.id = id;
+		this.fName = fName;
+		this.lName = lName;
+		this.email = email;
+	}
+
+
 	public int getId() {
 		return id;
 	}
@@ -43,6 +57,15 @@ public class Student {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", fName=" + fName + ", lName=" + lName + ", email=" + email + "]";
+	}
+
+
+	
 
 	
 

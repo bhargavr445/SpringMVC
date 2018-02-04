@@ -15,15 +15,15 @@ public class StudentTrainingServiceImpl implements StudentTrainingServiceI {
 	StudentDetailsDaoI studentDetailsDaoI;
 
 	public List<Student> getAllStudents() {
-		List<Student> studList = studentDetailsDaoI.getAllStudents();
+		return studentDetailsDaoI.getAllStudents();
 
-		return studList;
+
 	}
 
 	public Student getStudentById(int studentId) {
 		
-		Student stud = studentDetailsDaoI.getStudentById(studentId);
-		return stud;
+		return studentDetailsDaoI.getStudentById(studentId);
+		
 	}
 
 }

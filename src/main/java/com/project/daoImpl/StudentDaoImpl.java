@@ -18,28 +18,19 @@ import com.project.entites.Student;
 //@Transactional
 public class StudentDaoImpl implements StudentDao{
 	
-	StudentDaoImpl(){
-		Map<Long, Student> students = new HashMap<Long, Student>();
-		Configuration configuration = new Configuration();
-		configuration.configure("hibernate.cfg.xml");
-		//Create session factory instance	
-	}
-	
 
 
 	public boolean update(Student student) {
-		// TODO Auto-generated method stub
+
 		return false;
 	}
 
 	public boolean delete(Student student) {
-		
-		// TODO Auto-generated method stub
-		return false;
+				return false;
 	}
 
 	public Student getAllStudents(int id) {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 
@@ -71,7 +62,6 @@ public class StudentDaoImpl implements StudentDao{
 
 
 	public void deleteStudent(Student student) {
-		// TODO Auto-generated method stub
 		Configuration configuration = new Configuration();
 		configuration.configure("hibernate.cfg.xml");
 		
@@ -87,17 +77,12 @@ public class StudentDaoImpl implements StudentDao{
 
 
 	public Student getStudent(int id) {
-		// TODO Auto-generated method stub
 		Configuration configuration = new Configuration();
 		configuration.configure("hibernate.cfg.xml");
-		
 		 //Create session factory instance
 		 SessionFactory factory = configuration.buildSessionFactory();
 		 Session openSession = factory.openSession();
-		 //Transaction beginTransaction = openSession.beginTransaction();
-		 Student student = (Student)openSession.get(Student.class, id);
-		 //beginTransaction.commit();
-		 return student;
+		 return (Student)openSession.get(Student.class, id);
 	}
 
 
@@ -111,9 +96,7 @@ public class StudentDaoImpl implements StudentDao{
 		 Criteria createCriteria = openSession.createCriteria(Student.class);
 		 Criterion eq = Restrictions.eq("id",id);
 		 createCriteria.add(eq);
-		 Student uniqueResult = (Student) createCriteria.uniqueResult();
-		 //Student student = (Student) openSession.get(Student.class, id);
-		 return uniqueResult;
+		 return (Student) createCriteria.uniqueResult();
 	}
 
 

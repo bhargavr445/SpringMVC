@@ -1,5 +1,6 @@
 package com.project.daoImpl;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -7,8 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.criterion.Criterion;
-import org.hibernate.criterion.Restrictions;
+import org.hibernate.criterion.Projections;
 import org.springframework.stereotype.Repository;
 
 import com.project.dao.StudentTrainingDao;
@@ -25,7 +25,6 @@ public class StudentTrainingDaoImpl implements StudentTrainingDao {
 		SessionFactory factory = configuration.buildSessionFactory();
 		Session openSession = factory.openSession();
 		List<StudentTraining> stuList=openSession.createQuery("from Student").list();
-				
 		return stuList;
 	}
 
@@ -77,8 +76,62 @@ public class StudentTrainingDaoImpl implements StudentTrainingDao {
 		factory.close();
 		
 	}
-	
-	
-	
 
+	public List<String> getStudentNamesList() {
+		Configuration configuration = new Configuration();
+		configuration.configure("hibernate.cfg.xml");
+		SessionFactory factory = configuration.buildSessionFactory();
+		Session openSession = factory.openSession();
+		Criteria criteria = openSession.createCriteria(Student.class);
+		criteria.setProjection(Projections.property("fName"));
+		List<String> list = criteria.list();
+		return list;
+	}
+
+	public void createStudent(Student stu) {
+		// TODO Auto-generated method stub
+		Configuration configuration = new Configuration();
+		configuration.configure("hibernate.cfg.xml");
+		SessionFactory factory = configuration.buildSessionFactory();
+		Session openSession = factory.openSession();
+		Transaction beginTransaction = openSession.beginTransaction();
+		Serializable save = openSession.save(stu);
+		beginTransaction.commit();
+		openSession.close();
+		factory.close();
+	}
+
+	public void deleteStudentByObj(int id) {
+		// TODO Auto-generated method stub
+		Configuration configuration = new Configuration();
+		configuration.configure("hibernate.cfg.xml");
+		SessionFactory factory = configuration.buildSessionFactory();
+		Session openSession = factory.openSession();
+		Transaction beginTransaction = openSession.beginTransaction();
+		//int id= stu.getId();
+		Student ent = (Student) openSession.load(Student.class, id);
+		openSession.delete(ent);
+		beginTransaction.commit();
+		openSession.close();
+		factory.close();
+		
+	}
+	
+//	@Override
+//	public void editStudentByObj(int id) {
+//		// TODO Auto-generated method stub
+//		Configuration configuration = new Configuration();
+//		configuration.configure("hibernate.cfg.xml");
+//		SessionFactory factory = configuration.buildSessionFactory();
+//		Session openSession = factory.openSession();
+//		Transaction beginTransaction = openSession.beginTransaction();
+//		//int id= stu.getId();
+//		Student ent = (Student) openSession.load(Student.class, id);
+//		openSession.delete(ent);
+//		beginTransaction.commit();
+//		openSession.close();
+//		factory.close();
+//		
+//	}
+	
 }

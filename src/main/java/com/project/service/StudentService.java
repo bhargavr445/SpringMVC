@@ -6,7 +6,6 @@ import com.project.entites.Student;
 
 public interface StudentService {
 
-//	List<Student> getAllStudents(int id);
 	boolean update(Student student);
 	boolean delete(Student student);
 	int createStudent(Student student);

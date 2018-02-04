@@ -1,22 +1,23 @@
 package com.project.rest;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+//@CrossOrigin(origins = {"http://localhost:8585"}, maxAge = 4800, allowCredentials = "false")
 
-@Controller
+@RestController
 //@RequestMapping(value="pages")
 public class Pages {
 
 	@RequestMapping(value="/parentPage")
 	public ModelAndView getParent() {
-		ModelAndView mv = new ModelAndView("parent");
-		return mv;
+		return new ModelAndView("parent");
+		 
 	}
 	
 	@RequestMapping(value="/studentPage")
 	public ModelAndView getStudent() {
-		ModelAndView mv = new ModelAndView("student");
-		return mv;
+		return new ModelAndView("student");
+		
 	}
 }
