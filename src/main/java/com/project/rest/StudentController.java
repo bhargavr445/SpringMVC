@@ -24,32 +24,32 @@ import com.project.service.StudentTrainingServiceI;
 @RestController
 @RequestMapping(value="student")
 public class StudentController {
-	@Autowired
-	StudentTrainingServiceI studentTrainingServiceI;
+//	@Autowired
+//	StudentTrainingServiceI studentTrainingServiceI;
 	
 	@RequestMapping(value="logIn", method=RequestMethod.GET)
 	//@RequestHeader(value="token") String token
-	public TokenParams logIn(HttpServletRequest req) {
-		studentTrainingServiceI.checkDb(req.getHeader("token"));
+	public void logIn(HttpServletRequest req) {
+		//studentTrainingServiceI.checkDb(req.getHeader("token"));
 		String header = req.getHeader("token");
 		System.out.println(header);
-		TokenParams tokenParams = new TokenParams();
-		tokenParams.setAccessToken("AccessToken");
-		tokenParams.setExpiresIn("20:00 min");
-		tokenParams.setTokenType("test");
-		//tokenParams.setRole(req.getHeader("role"));
-		tokenParams.setUserName(req.getHeader("token"));
-		return tokenParams;
+//		TokenParams tokenParams = new TokenParams();
+//		tokenParams.setAccessToken("AccessToken");
+//		tokenParams.setExpiresIn("20:00 min");
+//		tokenParams.setTokenType("test");
+//		//tokenParams.setRole(req.getHeader("role"));
+//		tokenParams.setUserName(req.getHeader("token"));
+//		return tokenParams;
 		//System.out.println(token);
 	}
 	
-	@RequestMapping(value="getAllStudents", method=RequestMethod.GET)
-	public List<Student> getAllStudents() {
-		return studentTrainingServiceI.getAllStudents();
-	}
-	
-	@RequestMapping(value="getStudentById/{id}", method=RequestMethod.GET)
-	public Student getStudentById(@PathVariable("id") int studentId) {
-		return studentTrainingServiceI.getStudentById(studentId);
-	}
+//	@RequestMapping(value="getAllStudents", method=RequestMethod.GET)
+//	public List<Student> getAllStudents() {
+//		return studentTrainingServiceI.getAllStudents();
+//	}
+//	
+//	@RequestMapping(value="getStudentById/{id}", method=RequestMethod.GET)
+//	public Student getStudentById(@PathVariable("id") int studentId) {
+//		return studentTrainingServiceI.getStudentById(studentId);
+//	}
 }
