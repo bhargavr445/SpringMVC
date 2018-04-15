@@ -124,6 +124,14 @@ public class StudentTrainingImpl implements StudentTrainingS {
 		studentTrainingDao.deleteStudentByObj(id);
 		
 	}
+
+
+	public Student getDetailsByName(String name) {
+		//return 
+				Student detailsByName = studentTrainingDao.getDetailsByName(name);
+				return detailsByName;
+		
+	}
 	
 	
 

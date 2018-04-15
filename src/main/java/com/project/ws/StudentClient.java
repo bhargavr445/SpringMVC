@@ -34,7 +34,6 @@ public class StudentClient {
 	}
 
 	public Employee[] getAllStudents() throws JsonParseException, JsonMappingException, IOException {
-		// TODO Auto-generated method stub
 		Client newClient = ClientBuilder.newClient();
 		WebTarget target = newClient.target("http://dummy.restapiexample.com/api/v1/employees");
 		String string = target.request().get(String.class);
@@ -45,7 +44,6 @@ public class StudentClient {
 	}
 	
 	public void createEmployee(Employee emp) throws JsonParseException, JsonMappingException, IOException {
-		// TODO Auto-generated method stub
 		Client newClient = ClientBuilder.newClient();
 		WebTarget target = newClient.target("http://dummy.restapiexample.com/api/v1/create");
 		Response response = target.request().post(Entity.json(emp));

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.project.dao.StudentDetailsDaoI;
 import com.project.entites.Student;
+import com.project.entites.User;
 import com.project.service.StudentTrainingServiceI;
 
 @Service
@@ -23,6 +24,12 @@ public class StudentTrainingServiceImpl implements StudentTrainingServiceI {
 	public Student getStudentById(int studentId) {
 		
 		return studentDetailsDaoI.getStudentById(studentId);
+		
+	}
+
+	@Override
+	public User checkDb(String userName) {
+		return studentDetailsDaoI.checkDb(userName);
 		
 	}
 

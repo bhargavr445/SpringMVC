@@ -29,6 +29,8 @@ public interface StudentTrainingS {
 	void createStudent(Student stu);
 
 	void deleteStudentByObj(int id);
+
+	Student getDetailsByName(String name);
 	
 
 }

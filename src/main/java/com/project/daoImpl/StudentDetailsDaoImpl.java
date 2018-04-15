@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.project.dao.StudentDetailsDaoI;
 import com.project.entites.Student;
+import com.project.entites.User;
 
 @Repository
 public class StudentDetailsDaoImpl implements StudentDetailsDaoI {
@@ -25,7 +26,6 @@ public class StudentDetailsDaoImpl implements StudentDetailsDaoI {
 	}
 
 	public Student getStudentById(int studentId) {
-		// TODO Aut
 		Configuration configuration = new Configuration();
 		configuration.configure("hibernate.cfg.xml");
 		
@@ -35,6 +35,16 @@ public class StudentDetailsDaoImpl implements StudentDetailsDaoI {
 		 //Transaction beginTransaction = openSession.beginTransaction();
 		 Student student = (Student)openSession.get(Student.class, studentId);
 		return student;
+	}
+
+	@Override
+	public User checkDb(String userName) {
+		Configuration configuration = new Configuration();
+		configuration.configure("hibernate.cfg.xml");
+		SessionFactory factory = configuration.buildSessionFactory();
+		Session openSession = factory.openSession();
+		User user = (User) openSession.createQuery(" from User");
+		return user;
 	}
 
 }

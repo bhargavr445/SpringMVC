@@ -23,4 +23,6 @@ public interface StudentTrainingDao {
 
 	void deleteStudentByObj(int id);
 
+	Student getDetailsByName(String name);
+
 }

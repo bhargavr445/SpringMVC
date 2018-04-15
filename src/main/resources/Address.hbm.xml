@@ -1,0 +1,16 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping>
+ <class name="com.project.entites.Address" table="Address">
+	<id name="id" column="id" type="int" />
+	<property name="street" column="street" type="string" />
+	<property name="apt" column="apt" type="string" />
+	<property name="county" column="county" type="string" />
+	<property name="city" column="city" type="string" />
+	<property name="state" column="state" type="string" />
+	<property name="zip" column="zip" type="string" />
+</class>
+</hibernate-mapping>
+ 

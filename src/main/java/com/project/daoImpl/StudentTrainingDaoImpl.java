@@ -96,6 +96,7 @@ public class StudentTrainingDaoImpl implements StudentTrainingDao {
 		Session openSession = factory.openSession();
 		Transaction beginTransaction = openSession.beginTransaction();
 		Serializable save = openSession.save(stu);
+		//openSession.
 		beginTransaction.commit();
 		openSession.close();
 		factory.close();
@@ -115,6 +116,18 @@ public class StudentTrainingDaoImpl implements StudentTrainingDao {
 		openSession.close();
 		factory.close();
 		
+	}
+
+	public Student getDetailsByName(String name) {
+		Configuration configuration = new Configuration();
+		configuration.configure("hibernate.cfg.xml");
+		//Create session factory instance
+		SessionFactory factory = configuration.buildSessionFactory();
+		Session openSession = factory.openSession();
+		Student stu = (Student)openSession.get(Student.class, name);
+				//get(Student.class, name);
+		//List<StudentTraining> stuList=openSession.createQuery("from Student").list();
+		return stu;
 	}
 	
 //	@Override
